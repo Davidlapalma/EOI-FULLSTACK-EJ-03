@@ -5,21 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/trivago.css">
+    <title>TriDavid</title>
 </head>
 
 <body>
+    <section class="todo">
+        <div class="filters">
+            <div>
 
+                <input type="text" id="amount" onkeyup="pintarfiltrado()" style="border:0; color:#000000; font-weight:bold;" placeholder="Search for...">
+                <button type="button" class="btn btn-primary" onclick="pintarfiltrado()">Search</button>
+                <button type="button" class="btn btn-primary" onclick="inicio()">Inicio</button>
 
-
-    <script>
+                <div id="numero"></div>
+            </div>
+        </div>
+        <div class="indice">
+                <li>
+                    <lu><input class="form-check-input primercheck" type="checkbox" id="checkBoxpuntuacion" onclick="filtrarpuntuacion()"><a>Filtrar por puntuacion</a><a class="comentarios">Filtrar por comentarios</a><input class="form-check-input segundocheck" type="checkbox" id="checkBoxcomentarios" onclick="filtrarcomentario()"></lu>
+                </li>
+        </div>
+        <div id="main">
+            <div id="Apartamentos" class="row"></div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous" onclick="">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <div id="items"></div>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next" onclick="">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!--<script>
         fetch('/data/london.json')
             .then(response => response.json())
             .then(apartamentos => {
                 console.log(apartamentos);
             })
             
-    </script>
+    </script>-->
+    <script src=/index.js></script>
+    <script src=/displayer.js></script>
+    <script src=/filters.js></script>
 </body>
 
 </html>
